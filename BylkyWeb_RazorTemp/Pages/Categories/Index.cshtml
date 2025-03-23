@@ -1,0 +1,43 @@
+﻿@page
+@model BylkyWeb_RazorTemp.Pages.Categories.IndexModel
+
+<div class="container">
+   
+    <div class="row pb-3 pt-2">
+        <div class="col-6">
+            <h2>Category Table</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-page="/categories/create" class="btn btn-outline-dark"> 
+            <i class="bi bi-plus-circle-fill"></i> Add New Category</a>
+        </div>
+    </div>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Category Name</th>
+                <th>Category Order</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var obj in Model.CategoryList.OrderBy(u=>u.DisplayOrder))
+            {
+                <tr>
+                    <td>@obj.Name</td>
+                    <td>@obj.DisplayOrder</td>
+                    <td>
+                        <div class="text-center" role="group">
+                            <a asp-page="/categories/edit" asp-route-id="@obj.ID" class="btn btn-primary">
+                               <i class="bi bi-pencil-square"></i> Edit 
+                            </a> 
+                            <a asp-page="/categories/delete" asp-route-id="@obj.ID" class="btn btn-danger"> 
+                                <i class="bi bi-archive-fill"></i> Delete
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,38 @@
+﻿@page
+@model BylkyWeb_RazorTemp.Pages.Categories.CreateModel
+
+<form method="post">
+	<div class="border mt-3 p-4">
+		<div class="row pb-2">
+			<h2 class="text-dark pb-2">Create Category</h2>
+			<hr/>
+		</div>
+		@* <div asp-validation-summary="All"></div> *@
+		<div class="row p-1">
+			<label asp-for="Category.Name" class="p-0"></label>
+			<input asp-for="Category.Name" class="form-control" />
+			<span asp-validation-for="Category.Name" class="text-danger"></span>
+		</div>
+		<div class="row p-1">
+			<label asp-for="Category.DisplayOrder" class="p-0"></label>
+			<input asp-for="Category.DisplayOrder" class="form-control" />
+			<span asp-validation-for="Category.DisplayOrder" class="text-danger"></span>
+		</div>
+		<div class="row pt-3 pb-3">
+			<div class="col-6 col-md-3">
+				<button class="btn btn-outline-dark form-control">Add Category</button>
+			</div>
+			<div class="col-6 col-md-3">
+				<a asp-page="/categories/index" class="btn btn-outline-info form-control">Back to CategoryList</a>
+			</div>
+		</div>
+	</div>
+</form>
+
+@section Scripts
+{
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+}
+

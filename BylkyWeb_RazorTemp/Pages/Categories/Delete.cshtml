@@ -1,0 +1,26 @@
+﻿@page
+@model BylkyWeb_RazorTemp.Pages.Categories.DeleteModel
+
+<form method="post">
+	<input asp-for="category.ID" hidden /> 
+	<div class="border mt-3 p-4">
+		<div class="row pb-2">
+			<h2 class="text-dark pb-2">Delete Category</h2>
+			<hr />
+		</div>
+		<div class="row p-1">
+			<label asp-for="category.Name" class="p-0"></label>
+			<input asp-for="category.Name" disabled class="form-control" />
+		</div>
+		<div class="row p-1">
+			<label asp-for="category.DisplayOrder" class="p-0"></label>
+			<input asp-for="category.DisplayOrder" disabled class="form-control" />
+		</div>
+		<div class="row pt-3 pb-3">
+			<div class="col-6 col-md-3">
+				<button class="btn btn-outline-dark form-control">Delete Category</button>
+			</div>
+
+		</div>
+	</div>
+</form>
